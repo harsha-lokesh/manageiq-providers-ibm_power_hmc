@@ -28,8 +28,8 @@ class ManageIQ::Providers::IbmPowerHmc::Inventory::Parser::InfraManager < Manage
         :ipaddress           => sys.ipaddr,
         :power_state         => lookup_power_state(sys.state),
         :vmm_vendor          => "ibm_power_hmc",
-        :vmm_version     => [collector.hmc.version, collector.hmc.sp_name].compact.join(' '),
-        :vmm_buildnumber => collector.hmc.build_level
+        :vmm_version         => [collector.hmc.version, collector.hmc.sp_name].compact.join(' '),
+        :vmm_buildnumber     => collector.hmc.build_level
       )
 
       parse_host_operating_system(host, sys)
